@@ -92,6 +92,65 @@
   --radius-full: 9999px;
 }
 
+/* ── Spacing System ── */
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --space-10: 120px;
+
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-max: 1440px;
+
+  --section-padding-y: var(--space-9);
+  --section-padding-x: var(--space-5);
+
+  /* ── Typography Scale ── */
+  --text-xs: 0.75rem;      /* 12px - labels, badges */
+  --text-sm: 0.875rem;     /* 14px - captions, footnotes */
+  --text-base: 1rem;       /* 16px - body text */
+  --text-md: 1.125rem;     /* 18px - lead paragraphs */
+  --text-lg: 1.25rem;      /* 20px - card titles */
+  --text-xl: 1.5rem;       /* 24px - section subtitles */
+  --text-2xl: 2rem;        /* 32px - section headings */
+  --text-3xl: 2.75rem;     /* 44px - page headings */
+  --text-4xl: 3.5rem;      /* 56px - hero heading */
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.4;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.75;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --text-4xl: 2.25rem;
+    --text-3xl: 1.875rem;
+    --section-padding-y: var(--space-8);
+  }
+}
+
+@media (max-width: 479px) {
+  :root {
+    --text-4xl: 1.875rem;
+    --section-padding-x: var(--space-4);
+  }
+}
+
 /* ── Base Reset ── */
 * {
   box-sizing: border-box;
@@ -109,6 +168,50 @@ body {
   font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Global Section Spacing ── */
+section {
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+}
+
+/* ── Global Container ── */
+.container {
+  max-width: var(--container-xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
+}
+
+/* ── Global Typography ── */
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+h2 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+h4 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+}
+p {
+  font-size: var(--text-base);
+  line-height: var(--line-height-relaxed);
+}
+small, .caption {
+  font-size: var(--text-sm);
+  line-height: var(--line-height-normal);
 }
 
 /* ── Animations ── */
@@ -151,10 +254,10 @@ body {
 /* ── Scroll Reveal ── */
 .reveal-item {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
-.reveal-item.is-visible {
+.reveal-item.revealed {
   opacity: 1;
   transform: translateY(0);
 }

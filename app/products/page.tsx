@@ -132,12 +132,12 @@ export default function ProductsPage() {
 
         {/* ─── Products Grid ─── */}
         <section className="max-w-[1280px] mx-auto px-6 pb-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-6)]">
             {products.map((p, i) => (
               <article
                 key={i}
                 id={`product-${p.name.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
-                className="bg-white rounded-2xl p-8 shadow-[0_10px_30px_rgba(0,21,43,0.05)] border border-(--color-surface-variant) hover:shadow-[0_15px_40px_rgba(0,21,43,0.12)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
+                className="bg-white rounded-[12px] p-[var(--space-6)] shadow-[0_10px_30px_rgba(0,21,43,0.05)] border border-(--color-surface-variant) hover:shadow-[0_15px_40px_rgba(0,21,43,0.12)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
               >
                 {/* watermark */}
                 <div
@@ -155,24 +155,24 @@ export default function ProductsPage() {
                 </div>
 
                 <h2
-                  className="text-(--color-navy-deep) mb-6"
+                  className="text-(--color-navy-deep) mb-[var(--space-3)]"
                   style={{ fontFamily: "var(--font-manrope)", fontSize: "24px", fontWeight: 600 }}
                 >
                   {p.name}
                 </h2>
 
-                <div className="bg-(--color-surface-container-low) rounded-lg p-4 mb-6 border-l-4 border-(--color-navy-deep)">
+                <div className="bg-(--color-surface-container-low) rounded-lg p-4 mb-[var(--space-4)] border-l-4 border-(--color-navy-deep)">
                   <p
-                    className="text-(--color-on-surface) font-semibold leading-snug"
-                    style={{ fontFamily: "var(--font-inter)", fontSize: "14px" }}
+                    className="text-(--color-on-surface) font-semibold mb-[var(--space-4)]"
+                    style={{ fontFamily: "var(--font-inter)", fontSize: "14px", lineHeight: "var(--line-height-relaxed)" }}
                   >
                     {p.composition}
                   </p>
                 </div>
 
                 <p
-                  className="text-(--color-on-surface-variant) leading-relaxed"
-                  style={{ fontFamily: "var(--font-inter)", fontSize: "15px", lineHeight: 1.6 }}
+                  className="text-(--color-on-surface-variant) mb-[var(--space-4)]"
+                  style={{ fontFamily: "var(--font-inter)", fontSize: "15px", lineHeight: "var(--line-height-relaxed)" }}
                 >
                   {p.description}
                 </p>

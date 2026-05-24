@@ -46,7 +46,7 @@ export default function HomePage() {
       <Header />
       <main>
         {/* ─── Hero ─── */}
-        <section className="hero-gradient relative overflow-hidden text-white pt-20 pb-32">
+        <section className="hero-gradient relative overflow-hidden text-white min-h-[90vh] py-[var(--space-10)] flex flex-col justify-center">
           <div className="hero-wave" aria-hidden="true" />
           <div className="max-w-[1280px] mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -66,8 +66,8 @@ export default function HomePage() {
                   className="text-white animate-fade-in-up delay-100"
                   style={{
                     fontFamily: "var(--font-manrope)",
-                    fontSize: "clamp(32px, 5vw, 56px)",
-                    fontWeight: 700,
+                    fontSize: "var(--text-4xl)",
+                    fontWeight: "var(--font-weight-bold)",
                     lineHeight: 1.15,
                     letterSpacing: "-0.02em",
                   }}
@@ -80,11 +80,11 @@ export default function HomePage() {
                 </h1>
 
                 <p
-                  className="text-white/80 max-w-2xl animate-fade-in-up delay-200"
+                  className="text-white/80 max-w-[600px] mb-[var(--space-6)] animate-fade-in-up delay-200"
                   style={{
                     fontFamily: "var(--font-inter)",
-                    fontSize: "18px",
-                    lineHeight: 1.6,
+                    fontSize: "var(--text-md)",
+                    lineHeight: "var(--line-height-relaxed)",
                   }}
                 >
                   Medileo Healthcare Pvt. Ltd. is an innovative, research-driven
@@ -95,20 +95,20 @@ export default function HomePage() {
                   benchmarks.
                 </p>
 
-                <div className="flex flex-wrap gap-4 mt-4 animate-fade-in-up delay-300">
+                <div className="flex flex-wrap gap-[var(--space-4)] mt-4 animate-fade-in-up delay-300">
                   <Link
                     href="/products"
                     id="hero-explore-btn"
-                    className="bg-white text-(--color-navy-deep) font-bold px-8 py-4 rounded-lg hover:bg-(--color-surface-bright) transition-colors text-center shadow-lg active:scale-95"
-                    style={{ fontFamily: "var(--font-jakarta)", fontSize: "14px", fontWeight: 600 }}
+                    className="bg-white text-(--color-navy-deep) min-w-[160px] py-[var(--space-3)] px-[var(--space-6)] rounded-[6px] hover:bg-(--color-surface-bright) transition-colors text-center shadow-lg active:scale-95"
+                    style={{ fontFamily: "var(--font-jakarta)", fontSize: "var(--text-base)", fontWeight: "var(--font-weight-semibold)" }}
                   >
                     Explore Formulations
                   </Link>
                   <Link
                     href="/about"
                     id="hero-profile-btn"
-                    className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white/10 transition-colors text-center active:scale-95"
-                    style={{ fontFamily: "var(--font-jakarta)", fontSize: "14px", fontWeight: 600 }}
+                    className="border-2 border-white text-white min-w-[160px] py-[var(--space-3)] px-[var(--space-6)] rounded-[6px] hover:bg-white/10 transition-colors text-center active:scale-95"
+                    style={{ fontFamily: "var(--font-jakarta)", fontSize: "var(--text-base)", fontWeight: "var(--font-weight-semibold)" }}
                   >
                     Corporate Profile
                   </Link>
@@ -117,7 +117,7 @@ export default function HomePage() {
 
               {/* Right – HQ Card */}
               <div className="col-span-1 lg:col-span-5 flex justify-end animate-fade-in-up delay-400">
-                <div className="glass-card rounded-xl p-8 max-w-md w-full shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
+                <div className="glass-card rounded-[12px] p-[var(--space-6)] max-w-md w-full shadow-[0_20px_40px_rgba(0,0,0,0.2)]">
                   <div className="flex items-start gap-4">
                     <div className="bg-(--color-status-success) w-16 h-16 rounded-xl flex items-center justify-center shrink-0">
                       <svg
@@ -132,12 +132,12 @@ export default function HomePage() {
                     </div>
                     <div>
                       <h3
-                        className="text-white mb-2 font-bold uppercase tracking-wide"
+                        className="text-white mb-[var(--space-3)] font-bold uppercase tracking-wide"
                         style={{ fontFamily: "var(--font-manrope)", fontSize: "16px" }}
                       >
                         Global Headquarters
                       </h3>
-                      <p className="text-white/80" style={{ fontFamily: "var(--font-inter)", fontSize: "16px", lineHeight: 1.6 }}>
+                      <p className="text-white/80 mb-[var(--space-4)]" style={{ fontFamily: "var(--font-inter)", fontSize: "16px", lineHeight: "var(--line-height-relaxed)" }}>
                         Build TR(A), 2nd Floor, Mhada Colony,
                         <br />
                         Mumbai, Maharashtra, India – 400075
@@ -212,24 +212,24 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[var(--space-6)]">
               {therapeuticAreas.map((area, i) => (
                 <Link
                   key={i}
                   href="/products"
-                  className={`bg-white rounded-2xl p-8 shadow-[0_10px_30px_rgba(0,21,43,0.05)] hover:shadow-[0_15px_40px_rgba(0,21,43,0.15)] hover:-translate-y-2 transition-all duration-300 text-center flex flex-col items-center group reveal-item delay-${(i + 1) * 100}`}
+                  className={`bg-white rounded-[12px] p-[var(--space-6)] shadow-[0_10px_30px_rgba(0,21,43,0.05)] hover:shadow-[0_15px_40px_rgba(0,21,43,0.15)] hover:-translate-y-2 transition-all duration-300 text-center flex flex-col items-center group reveal-item delay-${(i + 1) * 100}`}
                   id={`therapeutic-card-${i}`}
                 >
-                  <div className="emoji-container group-hover:scale-110 transition-transform duration-300">
+                  <div className="emoji-container mb-[var(--space-5)] group-hover:scale-110 transition-transform duration-300" style={{ margin: "0 auto var(--space-5)" }}>
                     <span aria-hidden="true">{area.emoji}</span>
                   </div>
                   <h3
-                    className="text-(--color-navy-deep) mb-2"
+                    className="text-(--color-navy-deep) mb-[var(--space-3)]"
                     style={{ fontFamily: "var(--font-manrope)", fontSize: "24px", fontWeight: 600 }}
                   >
                     {area.title}
                   </h3>
-                  <p className="text-(--color-on-surface-variant)" style={{ fontFamily: "var(--font-inter)", fontSize: "14px" }}>
+                  <p className="text-(--color-on-surface-variant) mb-[var(--space-4)]" style={{ fontFamily: "var(--font-inter)", fontSize: "14px", lineHeight: "var(--line-height-relaxed)" }}>
                     {area.subtitle}
                   </p>
                 </Link>

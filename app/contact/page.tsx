@@ -54,19 +54,19 @@ export default function ContactPage() {
               {/* Left – info cards */}
               <div className="md:col-span-5 space-y-6">
                 {/* Office Card */}
-                <div className="glass-panel rounded-xl p-8 shadow-[0px_10px_30px_rgba(0,21,43,0.05)] border-l-4 border-(--color-navy-deep) hover:-translate-y-1 transition-transform duration-300">
-                  <div className="w-12 h-12 bg-(--color-surface-container) rounded-full flex items-center justify-center mb-6 text-xl">
+                <div className="glass-panel rounded-[12px] p-[var(--space-6)] shadow-[0px_10px_30px_rgba(0,21,43,0.05)] border-l-4 border-(--color-navy-deep) hover:-translate-y-1 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-(--color-surface-container) rounded-full flex items-center justify-center mb-[var(--space-5)] text-xl">
                     🏢
                   </div>
                   <h3
-                    className="text-(--color-navy-deep) mb-3 uppercase font-bold"
+                    className="text-(--color-navy-deep) mb-[var(--space-3)] uppercase font-bold"
                     style={{ fontFamily: "var(--font-jakarta)", fontSize: "12px", letterSpacing: "0.1em" }}
                   >
                     Registered Corporate Office
                   </h3>
                   <address
-                    className="not-italic text-(--color-on-surface-variant) leading-relaxed"
-                    style={{ fontFamily: "var(--font-inter)", fontSize: "16px", lineHeight: 1.6 }}
+                    className="not-italic text-(--color-on-surface-variant) mb-[var(--space-4)]"
+                    style={{ fontFamily: "var(--font-inter)", fontSize: "16px", lineHeight: "var(--line-height-relaxed)" }}
                   >
                     Medileo Healthcare Pvt. Ltd.
                     <br />
@@ -77,12 +77,12 @@ export default function ContactPage() {
                 </div>
 
                 {/* Email Card */}
-                <div className="glass-panel rounded-xl p-8 shadow-[0px_10px_30px_rgba(0,21,43,0.05)] border-l-4 border-(--color-status-success) hover:-translate-y-1 transition-transform duration-300">
-                  <div className="w-12 h-12 bg-(--color-surface-container) rounded-full flex items-center justify-center mb-6 text-xl">
+                <div className="glass-panel rounded-[12px] p-[var(--space-6)] shadow-[0px_10px_30px_rgba(0,21,43,0.05)] border-l-4 border-(--color-status-success) hover:-translate-y-1 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-(--color-surface-container) rounded-full flex items-center justify-center mb-[var(--space-5)] text-xl">
                     ✉️
                   </div>
                   <h3
-                    className="text-(--color-navy-deep) mb-3 uppercase font-bold"
+                    className="text-(--color-navy-deep) mb-[var(--space-3)] uppercase font-bold"
                     style={{ fontFamily: "var(--font-jakarta)", fontSize: "12px", letterSpacing: "0.1em" }}
                   >
                     Official Mailroom
@@ -100,7 +100,7 @@ export default function ContactPage() {
 
               {/* Right – Inquiry Form */}
               <div className="md:col-span-7">
-                <div className="glass-panel rounded-xl p-8 shadow-[0px_10px_30px_rgba(0,21,43,0.05)] h-full">
+                <div className="glass-panel rounded-[12px] p-[var(--space-6)] shadow-[0px_10px_30px_rgba(0,21,43,0.05)] h-full">
                   <h2
                     className="text-(--color-navy-deep) mb-8"
                     style={{ fontFamily: "var(--font-manrope)", fontSize: "32px", fontWeight: 600, lineHeight: 1.3 }}

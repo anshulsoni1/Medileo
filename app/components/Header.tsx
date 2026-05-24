@@ -47,8 +47,8 @@ export default function Header() {
       </div>
 
       {/* Main Navigation */}
-      <header className="bg-(--color-surface-white) sticky top-0 z-50 border-b border-(--color-outline-variant) shadow-sm">
-        <div className="max-w-[1280px] mx-auto flex justify-between items-center px-6 py-4">
+      <header className="bg-(--color-surface-white)/90 backdrop-blur-[12px] sticky top-0 z-[1000] border-b border-(--color-outline-variant)/15 shadow-sm transition-all duration-300 ease-in-out">
+        <div className="max-w-[1280px] mx-auto flex justify-between items-center px-6 py-4 min-h-[72px]">
           {/* Logo */}
           <Link
             href="/"
@@ -82,7 +82,7 @@ export default function Header() {
                 <Link
                   key={href}
                   href={href}
-                  className={`nav-link-underline transition-colors duration-200 ${
+                  className={`px-[var(--space-4)] nav-link-underline transition-colors duration-200 ${
                     isActive
                       ? "text-(--color-secondary) border-b-2 border-(--color-secondary) pb-0.5"
                       : "text-(--color-on-surface-variant) hover:text-(--color-secondary)"

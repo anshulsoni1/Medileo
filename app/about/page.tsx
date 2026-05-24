@@ -104,23 +104,23 @@ export default function AboutPage() {
               </div>
 
               {/* Core Values */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-6)] mb-20">
                 {coreValues.map((val, i) => (
                   <div
                     key={i}
-                    className={`bg-white rounded-[24px] p-8 border border-(--color-surface-variant) shadow-[0px_8px_24px_rgba(10,25,47,0.04)] hover:shadow-[0px_12px_32px_rgba(0,168,150,0.1)] transition-all duration-300 flex flex-col items-center text-center group reveal-item delay-${(i + 1) * 100}`}
+                    className={`bg-white rounded-[12px] p-[var(--space-6)] border border-(--color-surface-variant) shadow-[0px_8px_24px_rgba(10,25,47,0.04)] hover:shadow-[0px_12px_32px_rgba(0,168,150,0.1)] transition-all duration-300 flex flex-col items-center text-center group reveal-item delay-${(i + 1) * 100}`}
                     id={`core-value-${i}`}
                   >
-                    <div className="w-16 h-16 bg-(--color-surface-container) rounded-full flex items-center justify-center mb-6 group-hover:bg-(--color-secondary)/10 transition-colors duration-300 text-3xl">
+                    <div className="w-16 h-16 bg-(--color-surface-container) rounded-full flex items-center justify-center mb-[var(--space-5)] group-hover:bg-(--color-secondary)/10 transition-colors duration-300 text-3xl">
                       {val.emoji}
                     </div>
                     <h3
-                      className="text-(--color-navy-deep) mb-4"
+                      className="text-(--color-navy-deep) mb-[var(--space-3)]"
                       style={{ fontFamily: "var(--font-manrope)", fontSize: "24px", fontWeight: 600 }}
                     >
                       {val.title}
                     </h3>
-                    <p className="text-(--color-on-surface-variant) leading-relaxed" style={{ fontFamily: "var(--font-inter)", fontSize: "15px", lineHeight: 1.6 }}>
+                    <p className="text-(--color-on-surface-variant) mb-[var(--space-4)]" style={{ fontFamily: "var(--font-inter)", fontSize: "15px", lineHeight: "var(--line-height-relaxed)" }}>
                       {val.body}
                     </p>
                   </div>
@@ -169,8 +169,8 @@ export default function AboutPage() {
 
                 {/* Right – R&D Pipeline card */}
                 <div className="flex items-center justify-center">
-                  <div className="bg-(--color-primary-container) border border-white/10 rounded-2xl p-8 w-full shadow-2xl backdrop-blur-sm">
-                    <div className="flex items-center gap-4 mb-6">
+                  <div className="bg-(--color-primary-container) border border-white/10 rounded-[12px] p-[var(--space-6)] w-full shadow-2xl backdrop-blur-sm">
+                    <div className="flex items-center gap-4 mb-[var(--space-3)]">
                       <div className="w-12 h-12 bg-(--color-status-success) rounded-lg flex items-center justify-center text-2xl shadow-lg">
                         🔬
                       </div>
