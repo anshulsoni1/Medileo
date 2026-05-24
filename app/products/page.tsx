@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ScrollRevealWrapper from "../components/ScrollRevealWrapper";
 
 export const metadata: Metadata = {
   title: "Therapeutic Portfolio – Formulations & Pipeline",
@@ -86,7 +87,7 @@ export default function ProductsPage() {
       <Header />
       <main>
         {/* ─── Hero ─── */}
-        <section className="hero-gradient-products text-white pt-24 pb-32 px-6 text-center relative overflow-hidden">
+        <section className="hero-gradient-products text-white pt-32 pb-40 px-6 text-center relative overflow-hidden">
           <div className="absolute inset-0 dot-grid-bg opacity-10 pointer-events-none" aria-hidden="true" />
           <div className="max-w-[1280px] mx-auto relative z-10">
             <h1
@@ -106,13 +107,22 @@ export default function ProductsPage() {
                 Formulations &amp; Pipeline
               </span>
             </div>
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: "18px", lineHeight: 1.6 }}
+               className="text-white/80 max-w-2xl mx-auto mt-4">
+              Precision-engineered formulations across Diabetology, Cardiology, 
+              Neurology, Gastroenterology and Cellular Nutrition.
+            </p>
           </div>
         </section>
 
         {/* ─── Search Bar ─── */}
-        <section className="max-w-[1280px] mx-auto px-6 -mt-16 relative z-20 mb-16">
+        <section className="max-w-[1280px] mx-auto px-6 -mt-20 relative z-20 mb-20">
           <div className="bg-white rounded-2xl shadow-[0_10px_30px_rgba(0,21,43,0.05)] p-6 md:p-8 flex items-center justify-center">
             <div className="w-full max-w-3xl relative">
+              <p className="text-(--color-on-surface-variant) text-center mb-4 uppercase tracking-widest font-bold"
+                 style={{ fontFamily: "var(--font-jakarta)", fontSize: "11px" }}>
+                Search Therapeutic Portfolio
+              </p>
               <input
                 id="product-search"
                 type="text"
@@ -132,13 +142,15 @@ export default function ProductsPage() {
 
         {/* ─── Products Grid ─── */}
         <section className="max-w-[1280px] mx-auto px-6 pb-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[var(--space-6)]">
-            {products.map((p, i) => (
-              <article
-                key={i}
-                id={`product-${p.name.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
-                className="bg-white rounded-[12px] p-[var(--space-6)] shadow-[0_10px_30px_rgba(0,21,43,0.05)] border border-(--color-surface-variant) hover:shadow-[0_15px_40px_rgba(0,21,43,0.12)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group"
-              >
+          <ScrollRevealWrapper>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {products.map((p, i) => (
+                <article
+                  key={i}
+                  id={`product-${p.name.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
+                  className="bg-white rounded-[12px] p-[var(--space-6)] shadow-[0_10px_30px_rgba(0,21,43,0.05)] border border-(--color-surface-variant) hover:shadow-[0_15px_40px_rgba(0,21,43,0.12)] hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group reveal-item card-hover"
+                  style={{ transitionDelay: `${i * 80}ms` }}
+                >
                 {/* watermark */}
                 <div
                   className="absolute top-6 right-6 opacity-10 text-6xl font-serif italic pointer-events-none group-hover:opacity-20 transition-opacity select-none"
@@ -163,27 +175,28 @@ export default function ProductsPage() {
 
                 <div className="bg-(--color-surface-container-low) rounded-lg p-4 mb-[var(--space-4)] border-l-4 border-(--color-navy-deep)">
                   <p
-                    className="text-(--color-on-surface) font-semibold mb-[var(--space-4)]"
+                    className="text-(--color-on-surface) font-semibold"
                     style={{ fontFamily: "var(--font-inter)", fontSize: "14px", lineHeight: "var(--line-height-relaxed)" }}
                   >
                     {p.composition}
                   </p>
                 </div>
-
+                <div className="w-full h-px bg-(--color-surface-variant) my-3" />
                 <p
-                  className="text-(--color-on-surface-variant) mb-[var(--space-4)]"
+                  className="text-(--color-on-surface-variant) mb-0"
                   style={{ fontFamily: "var(--font-inter)", fontSize: "15px", lineHeight: "var(--line-height-relaxed)" }}
                 >
                   {p.description}
                 </p>
               </article>
             ))}
-          </div>
+            </div>
+          </ScrollRevealWrapper>
         </section>
 
         {/* ─── Disclaimer ─── */}
-        <section className="px-6 pb-20">
-          <div className="max-w-4xl mx-auto bg-(--color-surface-container-lowest) border border-(--color-outline-variant) border-dashed rounded-xl p-8 text-center shadow-sm">
+        <section className="px-6 pb-28">
+          <div className="max-w-4xl mx-auto bg-(--color-surface-container-lowest) border border-(--color-outline-variant) border-dashed rounded-xl p-10 text-center shadow-sm">
             <h3
               className="text-(--color-error) mb-4 tracking-widest uppercase font-bold"
               style={{ fontFamily: "var(--font-jakarta)", fontSize: "12px" }}

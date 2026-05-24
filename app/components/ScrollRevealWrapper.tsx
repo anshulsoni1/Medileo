@@ -1,19 +1,10 @@
 "use client";
-
 import { useEffect, useRef } from "react";
 
-export default function ScrollRevealWrapper({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ScrollRevealWrapper({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!ref.current) return;
-    const items = ref.current.querySelectorAll<HTMLElement>(".reveal-item");
-    if (!items.length) return;
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -23,10 +14,12 @@ export default function ScrollRevealWrapper({
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.12 }
     );
 
-    items.forEach((el) => observer.observe(el));
+    const items = ref.current?.querySelectorAll(".reveal-item");
+    items?.forEach((el) => observer.observe(el));
+
     return () => observer.disconnect();
   }, []);
 

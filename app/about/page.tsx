@@ -40,7 +40,7 @@ export default function AboutPage() {
       <Header />
       <main>
         {/* ─── Hero ─── */}
-        <section className="relative bg-gradient-to-b from-(--color-navy-deep) to-(--color-teal-vibrant) text-white py-28 flex flex-col items-center justify-center text-center px-6 overflow-hidden">
+        <section className="relative bg-gradient-to-b from-(--color-navy-deep) to-(--color-teal-vibrant) text-white py-36 flex flex-col items-center justify-center text-center px-6 overflow-hidden">
           <div className="absolute inset-0 dot-grid-bg opacity-10 pointer-events-none" aria-hidden="true" />
           <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-4 animate-fade-in-up">
             <h1
@@ -62,18 +62,23 @@ export default function AboutPage() {
                 Our Vision &amp; Legacy
               </span>
             </div>
+            <p className="text-white/75 max-w-xl text-center"
+               style={{ fontFamily: "var(--font-inter)", fontSize: "17px", lineHeight: 1.65 }}>
+              A science-driven pharmaceutical company built on rigour, 
+              integrity, and a bold vision for the future of medicine.
+            </p>
           </div>
         </section>
 
         {/* ─── Main Content ─── */}
-        <section className="bg-(--color-surface-container-low) py-20 px-4 md:px-6 relative -mt-16 z-20">
-          <div className="max-w-[1280px] mx-auto bg-white rounded-[32px] shadow-[0px_10px_40px_rgba(10,25,47,0.08)] p-8 md:p-16">
+        <section className="bg-(--color-surface-container-low) py-20 px-4 md:px-6 relative -mt-24 z-20">
+          <div className="max-w-[1280px] mx-auto bg-white rounded-[32px] shadow-[0px_10px_40px_rgba(10,25,47,0.08)] p-8 md:p-14 lg:p-20">
 
             {/* Patient-Centric Innovation */}
             <ScrollRevealWrapper>
-              <div className="text-center max-w-4xl mx-auto mb-20 reveal-item">
+              <div className="text-center max-w-4xl mx-auto mb-24 reveal-item">
                 <h2
-                  className="text-(--color-navy-deep) mb-8"
+                  className="text-(--color-navy-deep) mb-6"
                   style={{ fontFamily: "var(--font-manrope)", fontSize: "32px", fontWeight: 600, lineHeight: 1.3 }}
                 >
                   Patient-Centric Innovation
@@ -88,12 +93,12 @@ export default function AboutPage() {
                   work tirelessly to maintain an unblemished record of safety and
                   efficacy across all product lines.
                 </p>
-                <div className="relative bg-(--color-surface-bright) rounded-xl p-8 text-left border border-(--color-surface-variant) shadow-sm overflow-hidden">
+                <div className="relative bg-(--color-surface-bright) rounded-xl p-6 md:p-8 text-left border border-(--color-surface-variant) shadow-sm overflow-hidden">
                   <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-(--color-status-success) rounded-l-xl" />
                   <p className="text-(--color-on-surface-variant) leading-relaxed pl-4" style={{ fontFamily: "var(--font-inter)", fontSize: "16px", lineHeight: 1.6 }}>
                     By prioritising state-of-the-art manufacturing tech,
                     including{" "}
-                    <strong className="text-(--color-navy-deep) font-semibold">
+                    <strong className="text-(--color-navy-deep) font-medium">
                       Next-Gen Micronised Drug Delivery Technology
                     </strong>
                     , we ensure that every capsule and tablet provides optimal
@@ -104,19 +109,19 @@ export default function AboutPage() {
               </div>
 
               {/* Core Values */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-[var(--space-6)] mb-20">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-7 mb-24">
                 {coreValues.map((val, i) => (
                   <div
                     key={i}
-                    className={`bg-white rounded-[12px] p-[var(--space-6)] border border-(--color-surface-variant) shadow-[0px_8px_24px_rgba(10,25,47,0.04)] hover:shadow-[0px_12px_32px_rgba(0,168,150,0.1)] transition-all duration-300 flex flex-col items-center text-center group reveal-item delay-${(i + 1) * 100}`}
+                    className={`bg-white rounded-[12px] p-7 border border-(--color-surface-variant) shadow-[0px_8px_24px_rgba(10,25,47,0.04)] hover:shadow-[0px_12px_32px_rgba(0,168,150,0.1)] transition-all duration-300 flex flex-col items-center text-center group reveal-item card-hover delay-${(i + 1) * 100}`}
                     id={`core-value-${i}`}
                   >
-                    <div className="w-16 h-16 bg-(--color-surface-container) rounded-full flex items-center justify-center mb-[var(--space-5)] group-hover:bg-(--color-secondary)/10 transition-colors duration-300 text-3xl">
+                    <div className="w-14 h-14 bg-(--color-surface-container) rounded-full flex items-center justify-center mb-[var(--space-5)] group-hover:bg-(--color-secondary)/10 transition-colors duration-300 text-2xl">
                       {val.emoji}
                     </div>
                     <h3
                       className="text-(--color-navy-deep) mb-[var(--space-3)]"
-                      style={{ fontFamily: "var(--font-manrope)", fontSize: "24px", fontWeight: 600 }}
+                      style={{ fontFamily: "var(--font-manrope)", fontSize: "20px", fontWeight: 600 }}
                     >
                       {val.title}
                     </h3>
@@ -129,12 +134,13 @@ export default function AboutPage() {
             </ScrollRevealWrapper>
 
             {/* Next-Gen Innovation Block */}
-            <div className="bg-(--color-navy-deep) rounded-[32px] p-8 md:p-12 text-white relative overflow-hidden shadow-xl">
+            <ScrollRevealWrapper>
+            <div className="bg-(--color-navy-deep) rounded-[32px] p-10 md:p-14 text-white relative overflow-hidden shadow-xl reveal-item">
               {/* decorative blobs */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-(--color-secondary) opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none" aria-hidden="true" />
               <div className="absolute bottom-0 left-0 w-96 h-96 bg-(--color-teal-vibrant) opacity-5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/4 pointer-events-none" aria-hidden="true" />
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 relative z-10">
                 {/* Left */}
                 <div>
                   <div className="inline-block bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-6">
@@ -147,7 +153,7 @@ export default function AboutPage() {
                   </div>
                   <h2
                     className="text-white font-bold mb-6 leading-tight"
-                    style={{ fontFamily: "var(--font-manrope)", fontSize: "36px", fontWeight: 700 }}
+                    style={{ fontFamily: "var(--font-manrope)", fontSize: "32px", fontWeight: 700 }}
                   >
                     Pioneering Next-Generation Innovation
                   </h2>
@@ -170,7 +176,7 @@ export default function AboutPage() {
                 {/* Right – R&D Pipeline card */}
                 <div className="flex items-center justify-center">
                   <div className="bg-(--color-primary-container) border border-white/10 rounded-[12px] p-[var(--space-6)] w-full shadow-2xl backdrop-blur-sm">
-                    <div className="flex items-center gap-4 mb-[var(--space-3)]">
+                    <div className="flex items-center gap-4 mb-5">
                       <div className="w-12 h-12 bg-(--color-status-success) rounded-lg flex items-center justify-center text-2xl shadow-lg">
                         🔬
                       </div>
@@ -181,9 +187,9 @@ export default function AboutPage() {
                         Medileo R&amp;D Pipeline
                       </h4>
                     </div>
-                    <ul className="space-y-4">
+                    <ul className="space-y-3">
                       {rdPipeline.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3">
+                        <li key={i} className="reveal-item flex items-start gap-3" style={{ transitionDelay: `${i * 80}ms` }}>
                           <span className="w-1.5 h-1.5 rounded-full bg-(--color-secondary-fixed) mt-2.5 flex-shrink-0" />
                           <span className="text-white/90" style={{ fontFamily: "var(--font-inter)", fontSize: "16px" }}>
                             {item}
@@ -195,8 +201,9 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </ScrollRevealWrapper>
+        </div>
+      </section>
       </main>
       <Footer />
     </>

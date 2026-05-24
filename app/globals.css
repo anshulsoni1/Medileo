@@ -336,3 +336,27 @@ small, .caption {
   background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.15) 1px, transparent 1px);
   background-size: 40px 40px;
 }
+
+/* ── Scroll Reveal System ── */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.reveal-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-item.delay-100 { transition-delay: 100ms; }
+.reveal-item.delay-200 { transition-delay: 200ms; }
+.reveal-item.delay-300 { transition-delay: 300ms; }
+.reveal-item.delay-400 { transition-delay: 400ms; }
+
+/* ── Hover Card Lift System ── */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0, 21, 43, 0.13);
+}
