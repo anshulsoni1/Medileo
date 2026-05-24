@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ── Brand Colours ── */
+  --color-navy-deep: #0a192f;
+  --color-teal-vibrant: #008080;
+  --color-status-success: #00a896;
+  --color-accent-red: #ff4d4d;
+
+  /* ── Surface Scale ── */
+  --color-surface: #f6fafe;
+  --color-surface-bright: #f6fafe;
+  --color-surface-dim: #d6dade;
+  --color-surface-white: #ffffff;
+  --color-surface-variant: #dfe3e7;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f0f4f8;
+  --color-surface-container: #eaeef2;
+  --color-surface-container-high: #e5e9ed;
+  --color-surface-container-highest: #dfe3e7;
+  --color-surface-tint: #4d6079;
+  --color-background: #f6fafe;
+
+  /* ── On-Surface ── */
+  --color-on-surface: #171c1f;
+  --color-on-surface-variant: #44474d;
+  --color-on-background: #171c1f;
+
+  /* ── Inverse ── */
+  --color-inverse-surface: #2c3134;
+  --color-inverse-on-surface: #edf1f5;
+  --color-inverse-primary: #b4c8e5;
+
+  /* ── Outline ── */
+  --color-outline: #74777e;
+  --color-outline-variant: #c4c6cd;
+
+  /* ── Primary ── */
+  --color-primary: #000000;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #061c33;
+  --color-on-primary-container: #7285a0;
+  --color-primary-fixed: #d2e4ff;
+  --color-primary-fixed-dim: #b4c8e5;
+  --color-on-primary-fixed: #061c33;
+  --color-on-primary-fixed-variant: #354860;
+
+  /* ── Secondary ── */
+  --color-secondary: #006b5f;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #76f4e0;
+  --color-on-secondary-container: #006f63;
+  --color-secondary-fixed: #79f7e3;
+  --color-secondary-fixed-dim: #59dbc7;
+  --color-on-secondary-fixed: #00201c;
+  --color-on-secondary-fixed-variant: #005047;
+
+  /* ── Tertiary ── */
+  --color-tertiary: #000000;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #001c3b;
+  --color-on-tertiary-container: #6785b4;
+  --color-tertiary-fixed: #d5e3ff;
+  --color-tertiary-fixed-dim: #a9c8fb;
+  --color-on-tertiary-fixed: #001c3b;
+  --color-on-tertiary-fixed-variant: #274773;
+
+  /* ── Error ── */
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  /* ── Typography ── */
+  --font-manrope: "Manrope", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+
+  /* ── Spacing ── */
+  --spacing-gutter: 24px;
+  --spacing-margin-mobile: 16px;
+  --spacing-section-padding: 80px;
+  --spacing-card-padding: 32px;
+  --spacing-container-max: 1280px;
+
+  /* ── Border Radius ── */
+  --radius-sm: 0.25rem;
+  --radius-DEFAULT: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
+/* ── Base Reset ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseBadge {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes slideInFromLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out both;
+}
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.6s ease-out both;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+.pulse-badge { animation: pulseBadge 2s ease-in-out infinite; }
+
+/* ── Scroll Reveal ── */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Hero Gradient ── */
+.hero-gradient {
+  background: linear-gradient(135deg, #0a192f 0%, #004d40 100%);
+}
+.hero-gradient-lr {
+  background: linear-gradient(to right, #0a192f, #008080);
+}
+.hero-gradient-products {
+  background: linear-gradient(135deg, #0a192f 0%, #006b5f 100%);
+}
+
+/* ── Glass ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.glass-panel {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+}
+
+/* ── Hero Wave ── */
+.hero-wave {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='1440' height='700' viewBox='0 0 1440 700' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 350C240 350 480 150 720 150C960 150 1200 350 1440 350V700H0V350Z' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+/* ── Nav Underline ── */
+.nav-link-underline {
+  position: relative;
+  text-decoration: none;
+}
+.nav-link-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--color-secondary);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.nav-link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* ── Emoji Container ── */
+.emoji-container {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface-container-low);
+  border-radius: 20px;
+  margin: 0 auto 24px;
+  font-size: 48px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+/* ── Dot-grid background ── */
+.dot-grid-bg {
+  background-image: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
