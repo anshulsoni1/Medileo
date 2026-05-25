@@ -49,12 +49,12 @@ export default function ContactPage() {
         </section>
 
         {/* ─── Contact Cards Section (overlapping hero) ─── */}
-        <section className="w-full px-6 md:px-12 relative -mt-36 pb-24">
-          <div className="max-w-[1280px] w-full mx-auto px-4 md:px-8">
-            <ScrollRevealWrapper>
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-start">
+        <section className="w-full px-6 relative -mt-20 pb-12">
+          <div className="max-w-[1280px] w-full mx-auto">
+            <ScrollRevealWrapper className="w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start w-full">
                 {/* Left – info cards */}
-                <div className="md:col-span-5 space-y-8 w-full pb-4 md:pb-0 px-2 md:px-0">
+                <div className="lg:col-span-6 space-y-6 lg:space-y-8 w-full pb-4 lg:pb-0">
                   {/* Office Card */}
                   <div className="glass-panel rounded-[12px] p-6 md:p-8 shadow-[0px_10px_30px_rgba(0,21,43,0.05)] border-l-4 border-(--color-navy-deep) hover:-translate-y-1 transition-transform duration-300 reveal-item card-hover delay-0">
                     <div className="w-12 h-12 bg-(--color-surface-container) rounded-full flex items-center justify-center mb-4 text-2xl flex-shrink-0">
@@ -92,7 +92,7 @@ export default function ContactPage() {
                     <a
                       href="mailto:medileohealthcare@gmail.com"
                       id="contact-email-link"
-                      className="block mt-1 text-(--color-status-success) hover:text-(--color-secondary) transition-colors"
+                      className="block mt-1 text-(--color-status-success) hover:text-(--color-secondary) transition-colors break-all lg:break-normal"
                       style={{ fontFamily: "var(--font-manrope)", fontSize: "18px", fontWeight: 600 }}
                     >
                       medileohealthcare@gmail.com
@@ -101,7 +101,7 @@ export default function ContactPage() {
                 </div>
 
                 {/* Right – Inquiry Form */}
-                <div className="md:col-span-7 reveal-item delay-200 w-full">
+                <div className="lg:col-span-6 reveal-item delay-200 w-full">
                   <div className="glass-panel rounded-[12px] p-8 shadow-[0px_10px_30px_rgba(0,21,43,0.05)] h-full">
                     <h2
                       className="text-(--color-navy-deep) mb-6 tracking-tight"
@@ -188,28 +188,30 @@ export default function ContactPage() {
         </section>
 
         {/* ─── Critical Notice ─── */}
-        <section className="px-6 pb-28 w-full flex justify-center">
-          <ScrollRevealWrapper>
-            <div className="max-w-4xl mx-auto bg-(--color-surface-container-lowest) border border-(--color-outline-variant) border-dashed rounded-2xl p-10 text-center shadow-sm reveal-item">
-              <h3
-                className="text-(--color-error) mb-4 tracking-widest uppercase font-bold"
-                style={{ fontFamily: "var(--font-jakarta)", fontSize: "12px" }}
-              >
-                Critical Notice for All Visitors
-              </h3>
-              <p className="mt-2 text-(--color-on-surface-variant) leading-relaxed" style={{ fontFamily: "var(--font-inter)", fontSize: "16px", lineHeight: 1.6 }}>
-                The primary data listed on this domain regarding clinical molecules
-                or descriptive chemical layouts is organised exclusively for
-                educational reference. It is strictly meant{" "}
-                <strong className="text-(--color-on-surface)">
-                  For the Use of a Registered Medical Practitioner or a Hospital
-                  or a Laboratory Only
-                </strong>
-                . It should under no circumstance be utilised to execute home
-                self-treatment or substitute official specialist medical guidance.
-              </p>
-            </div>
-          </ScrollRevealWrapper>
+        <section className="px-6 pb-28 w-full">
+          <div className="max-w-4xl w-full mx-auto">
+            <ScrollRevealWrapper>
+              <div className="w-full bg-(--color-surface-container-lowest) border border-(--color-outline-variant) border-dashed rounded-2xl p-8 lg:p-10 text-center shadow-sm reveal-item">
+                <h3
+                  className="text-(--color-error) mb-4 tracking-widest uppercase font-bold"
+                  style={{ fontFamily: "var(--font-jakarta)", fontSize: "12px" }}
+                >
+                  Critical Notice for All Visitors
+                </h3>
+                <p className="mt-2 text-(--color-on-surface-variant) leading-relaxed" style={{ fontFamily: "var(--font-inter)", fontSize: "16px", lineHeight: 1.6 }}>
+                  The primary data listed on this domain regarding clinical molecules
+                  or descriptive chemical layouts is organised exclusively for
+                  educational reference. It is strictly meant{" "}
+                  <strong className="text-(--color-on-surface)">
+                    For the Use of a Registered Medical Practitioner or a Hospital
+                    or a Laboratory Only
+                  </strong>
+                  . It should under no circumstance be utilised to execute home
+                  self-treatment or substitute official specialist medical guidance.
+                </p>
+              </div>
+            </ScrollRevealWrapper>
+          </div>
         </section>
       </main>
       <Footer />

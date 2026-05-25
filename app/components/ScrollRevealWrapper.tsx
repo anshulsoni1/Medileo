@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-export default function ScrollRevealWrapper({ children }: { children: React.ReactNode }) {
+export default function ScrollRevealWrapper({ children, className }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,5 +23,5 @@ export default function ScrollRevealWrapper({ children }: { children: React.Reac
     return () => observer.disconnect();
   }, []);
 
-  return <div ref={ref}>{children}</div>;
+  return <div ref={ref} className={className}>{children}</div>;
 }
