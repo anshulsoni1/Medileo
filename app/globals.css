@@ -170,20 +170,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── Global Section Spacing ── */
-section {
-  padding-top: var(--section-padding-y);
-  padding-bottom: var(--section-padding-y);
-}
-
-/* ── Global Container ── */
-.container {
-  max-width: var(--container-xl);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--section-padding-x);
-  padding-right: var(--section-padding-x);
-}
+/* Note: Global section padding has been refactored and removed to prevent layout conflicts and double padding. Sections utilize page-level spacing classes. */
 
 /* ── Global Typography ── */
 h1 {
@@ -251,16 +238,6 @@ small, .caption {
 
 .pulse-badge { animation: pulseBadge 2s ease-in-out infinite; }
 
-/* ── Scroll Reveal ── */
-.reveal-item {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-}
-.reveal-item.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* ── Hero Gradient ── */
 .hero-gradient {
@@ -354,9 +331,10 @@ small, .caption {
 
 /* ── Hover Card Lift System ── */
 .card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: opacity 0.55s ease, transform 0.55s ease, box-shadow 0.3s ease;
 }
-.card-hover:hover {
+.card-hover.revealed:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 50px rgba(0, 21, 43, 0.13);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

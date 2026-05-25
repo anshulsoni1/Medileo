@@ -44,7 +44,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main>
+      <main className="w-full">
         {/* ─── Hero ─── */}
         <section className="hero-gradient relative overflow-hidden text-white min-h-[90vh] py-[var(--space-10)] flex flex-col justify-center">
           <div className="hero-wave" aria-hidden="true" />
@@ -183,7 +183,8 @@ export default function HomePage() {
 
         {/* ─── Therapeutic Focus ─── */}
         <ScrollRevealWrapper>
-          <section className="py-20 px-6 max-w-[1280px] mx-auto">
+          <section>
+            <div className="max-w-[1280px] mx-auto w-full px-6 py-20">
             <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 reveal-item">
               <div className="max-w-3xl">
                 <h2
@@ -234,6 +235,7 @@ export default function HomePage() {
                   </p>
                 </Link>
               ))}
+            </div>
             </div>
           </section>
         </ScrollRevealWrapper>

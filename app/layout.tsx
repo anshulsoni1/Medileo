@@ -50,9 +50,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${inter.variable} ${plusJakartaSans.variable} scroll-smooth overflow-x-hidden`}
+      className={`${manrope.variable} ${inter.variable} ${plusJakartaSans.variable} scroll-smooth`}
     >
-      <body className="min-h-screen flex flex-col bg-(--color-background) text-(--color-on-surface) antialiased overflow-x-hidden">
+      <body className="min-h-screen flex flex-col bg-(--color-background) text-(--color-on-surface) antialiased">
         {children}
       </body>
     </html>
